@@ -1,0 +1,128 @@
+{
+   "compteurs":[
+      {
+         "title":"Compteur 1",
+         "type":"NUMBER_DECIMAL",
+         "date_created":"12/06/2023 12:56:33",
+         "element":50,
+         "suffix": "€",
+         "controllers":[
+            {
+               "label":"+",
+               "name":"plus",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"+1"
+               }
+            },
+            {
+               "label":"-",
+               "name":"sub",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"-1"
+               }
+            }
+         ]
+      },
+      {
+         "title":"Compteur 56",
+         "type":"NUMBER_DECIMAL",
+         "date_created":"12/06/2023 12:56:33",
+         "element":50,
+         "suffix": "€",
+         "controllers":[
+            {
+               "label":"+",
+               "name":"plus",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"+1"
+               }
+            },
+            {
+               "label":"-",
+               "name":"sub",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"-1"
+               }
+            }
+         ]
+      },
+      {
+         "title":"Compteur >>",
+         "type":"NUMBER_DECIMAL",
+         "date_created":"12/06/2023 12:56:33",
+         "element":50,
+         "suffix": "€",
+         "controllers":[
+            {
+               "label":"+",
+               "name":"plus",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"+1"
+               }
+            },
+            {
+               "label":"-",
+               "name":"sub",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"-1"
+               }
+            }
+         ]
+      },
+      {
+         "title":"Compteur EMMA",
+         "type":"NUMBER_DOUBLE",
+         "suffix":"€",
+         "date_created":"12/06/2023 12:56:33",
+         "element":50.56,
+         "controllers":[
+            {
+               "label":"+",
+               "name":"plus",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"+1"
+               }
+            },
+            {
+               "label":"-",
+               "name":"sub",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"-1"
+               }
+            },
+            {
+               "label":"D",
+               "name":"double",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"*1"
+               }
+            },
+            {
+               "label":">",
+               "name":"plus50",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"+50"
+               }
+            },
+            {
+               "label":"<<",
+               "name":"sub100",
+               "action":{
+                  "command":"calcul",
+                  "calcul":"-100"
+               }
+            }
+         ]
+      }
+   ]
+}

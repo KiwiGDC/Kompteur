@@ -1,0 +1,15 @@
+{
+  "background_color": "black",
+  "description": "Compteurs pour compters tout les jours et tout ce que tu veux",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "CFAC",
+  "short_name": "Compteur",
+  "start_url": "index.html"
+}
