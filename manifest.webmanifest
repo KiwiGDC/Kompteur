@@ -1,6 +1,6 @@
 {
   "background_color": "black",
-  "description": "Compteurs pour compters tout les jours et tout ce que tu veux",
+  "description": "List of counters for anything",
   "display": "fullscreen",
   "icons": [
     {
@@ -10,6 +10,9 @@
     }
   ],
   "name": "CFAC",
-  "short_name": "Compteur",
-  "start_url": "index.html"
+  "short_name": "Counter",
+  "start_url": "index.html",
+  "related_applications": [{
+    "platform": "web"
+  }]
 }

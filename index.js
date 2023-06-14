@@ -133,7 +133,7 @@ const templateModal = `
 const template = `    
 <div class="compteur">
     <div class="header">
-
+    calcul
         <h1>[TITLE]</h1>
         <div class="mini-controller">
         </div>
@@ -215,10 +215,10 @@ newBtn.addEventListener('click', function(ev) {
     <div>
         <form>
             <label for="new_title">Titre :</label>
-            <input type='text' name="new_title" placeholder="Titre"/>
+            <input type='text' name="new_title" placeholder="Title"/>
 
             <label for="element">Element :</label>
-            <input type='text' name="new_element" placeholder="Element par défaut"/>
+            <input type='text' name="new_element" placeholder="Default value"/>
 
             <label for="new_suffix">Suffix</label>
             <input type='text' name="new_suffix" placeholder="Suffix"/>
@@ -230,13 +230,13 @@ newBtn.addEventListener('click', function(ev) {
 
     </div>`
 
-    let htmlCreate = document.createElementFromString(templateModal.replace("[MODAL_TITLE]", "Nouveau compteur :").replace("[MODAL_SUBTITLE]", "Merci de remplir le forumulaire"));
+    let htmlCreate = document.createElementFromString(templateModal.replace("[MODAL_TITLE]", "New counter :").replace("[MODAL_SUBTITLE]", "Controllers :"));
     controllerModal.modal = htmlCreate; 
     htmlCreate.appendChild(document.createElementFromString(controllerHtml));
     controllerModal.modal.querySelector('#close_modal').addEventListener('click', ev => controllerModal.hideModal());
     controllerModal.bg.appendChild(controllerModal.modal);
 
-    let addController = document.createElementFromString('<input type="button" value="Ajouter un controller"/>');
+    let addController = document.createElementFromString('<input type="button" value="Add controller"/>');
     let i = 0;
     addController.addEventListener('click', ev => 
     {
@@ -246,10 +246,10 @@ newBtn.addEventListener('click', function(ev) {
             <input type='text' name="`+ controllerName("label") +`" placeholder="Label"/>
 
             <label for="`+ controllerName("name") +`">Nom</label>
-            <input type='text' name="`+ controllerName("name") +`" placeholder="Nom"/>
+            <input type='text' name="`+ controllerName("name") +`" placeholder="Name"/>
 
             <label for="`+ controllerName("calcul") +`">Calcul</label>
-            <input type='text' name="`+ controllerName("calcul") +`" placeholder="Calcul"/>
+            <input type='text' name="`+ controllerName("calcul") +`" placeholder="Calc"/>
             </div>
         `;
 
@@ -258,7 +258,7 @@ newBtn.addEventListener('click', function(ev) {
     });
 
     htmlCreate.querySelector("form").appendChild(addController);
-    htmlCreate.querySelector("form").appendChild(document.createElementFromString('<input type="submit" value="Ajouter"/>'))
+    htmlCreate.querySelector("form").appendChild(document.createElementFromString('<input type="submit" value="Add"/>'))
 
     htmlCreate.querySelector("form").addEventListener('submit', ev => 
     {
@@ -372,7 +372,8 @@ Document.prototype.createController = function(body, title, id, classsup, cmd, j
                 case "delete":
                     localStorage.deleteCompteur(json);
                     break;
-            
+                case "set":
+                    alert("Soon...");
                 default:
                     break;
             }
@@ -406,7 +407,7 @@ function createSettingsModifier(json)
     let element = document.createElementFromString('<p style="text-align: center;"></p>');
     let type = document.createElement("p");
 
-    type.innerHTML = "Type : " + json.type;
+    type.innerHTML = "";
     element.innerHTML = json.element;
     html.appendChild(element);
     html.appendChild(type);
@@ -417,13 +418,13 @@ function createSettingsModifier(json)
     json.controllers.forEach(controller => {
         let controllerID = function(name){return i + "_" + name};
         let controllerHtml = `<div>
-            <label for="` + controllerID("name") + `">Controller name's :</label>
+            <label for="` + controllerID("name") + `">Controller name :</label>
             <input type='text' name="` +  controllerID("name") + `" value="` + controller.name + `" />
 
-            <label for="` + controllerID("label") + `">Controller label's :</label>
+            <label for="` + controllerID("label") + `">Controller label :</label>
             <input type='text' name="` +  controllerID("label") + `" value="` + controller.label + `" />
 
-            <label for="` + controllerID("calcul") + `">Controller calcul's :</label>
+            <label for="` + controllerID("calcul") + `">Controller calcul :</label>
             <input type='text' name="` +  controllerID("calcul") + `" value="` + controller.action.calcul + `" />
         </form></div>`;
         htmlController.querySelector("form").appendChild(document.createElementFromString(controllerHtml));
