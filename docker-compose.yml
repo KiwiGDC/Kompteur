@@ -1,0 +1,8 @@
+services:
+  kompteur:
+    container_name: kompteur
+    hostname: kompteur
+    image: kiwigdc:kompteur
+    restart: unless-stopped
+    ports:
+      - "80:80"
